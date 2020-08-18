@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MyDemo
 
 #### 介绍
@@ -39,5 +38,3 @@
 5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
 =======
-# MyDemo
->>>>>>> ab80e0c9d045e79a8391dda5f30db1c9075b951a
