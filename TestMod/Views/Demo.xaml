@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="TestMod.Views.Demo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+             xmlns:views="clr-namespace:TestMod.Views"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <TabControl Name="tabControl" >
+            <TabItem Header="TelerikDemo">
+                <!-- 
+                <xcdg:DataGridControl x:Name="gridControl"  AutoCreateForeignKeyConfigurations="True"  >
+                    <xcdg:DataGridControl.View>
+                        <xcdg:TableView UseDefaultHeadersFooters="False">
+                            <xcdg:TableView.FixedHeaders>
+                                <DataTemplate>
+                                    <xcdg:InsertionRow/>
+                                </DataTemplate>
+                                <DataTemplate>
+                                    <xcdg:ColumnManagerRow />
+                                </DataTemplate>
+                            </xcdg:TableView.FixedHeaders>
+                        </xcdg:TableView>
+                    </xcdg:DataGridControl.View>
+                    <xcdg:DataGridControl.Columns>
+                        <xcdg:Column FieldName="Name" IsMainColumn="True" Title="姓名"/>
+                        <xcdg:Column FieldName="Age" Title="年龄"/>
+                        <xcdg:Column FieldName="IsAdmin" Title="管理员"/>
+                        <xcdg:Column FieldName="Birthdary" Title="生日"/>
+                    </xcdg:DataGridControl.Columns>
+                 </xcdg:DataGridControl>
+                -->
+                <views:TelerikDemo/>
+            </TabItem>
+            <TabItem Header="XceedDemo">
+                <views:XceedDemo/>
+            </TabItem>
+            <TabItem Header="Test3">
+            </TabItem>
+            <TabItem Header="Test4">
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
