@@ -20,12 +20,29 @@ namespace TestMod.ViewModels
             set { SetProperty(ref persons, value); }
         }
 
+        private ObservableCollection<Song> songsList;
+
+        public ObservableCollection<Song> SongsList
+        {
+            get { return songsList; }
+            set { SetProperty(ref songsList, value); }
+        }
 
         public TelerikDemoViewModel()
         {
             Messenger.Default.Register<PersonLightMessage>(this, "AddFile", OnAddFileMessage);
             Messenger.Default.Register<PersonLightMessage>(this, "ClearFile", OnClearFileMessage);
             CreatePersons();
+            SongsList = new ObservableCollection<Song>();
+            SongsList.Add(new Song() {Title = "张三"});
+            SongsList.Add(new Song() { Title = "张二" });
+            SongsList.Add(new Song() { Title = "张大" });
+            SongsList.Add(new Song() { Title = "王三" });
+            SongsList.Add(new Song() { Title = "王二" });
+            SongsList.Add(new Song() { Title = "李四" });
+            SongsList.Add(new Song() { Title = "李三" });
+
+
         }
         private void OnClearFileMessage(PersonLightMessage message)
         {

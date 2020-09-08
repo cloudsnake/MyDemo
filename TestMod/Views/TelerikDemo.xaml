@@ -5,57 +5,89 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:prism="http://prismlibrary.com/" xmlns:models="clr-namespace:TestMod.Models"
              prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style x:Key="AutoCompleteStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <DataTemplate x:Key="SongsSearchAutoComplete">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Title}" Style="{StaticResource AutoCompleteStyle}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
-        <telerik:RadGridView ItemsSource="{Binding Persons }" 
-                                 GroupRenderMode="Flat"
-                                 CanUserFreezeColumns="False"
-                                 ScrollMode="RealTime"
-                                 CanUserInsertRows="true"
-                                 CanUserDeleteRows="true"
-                                 x:Name="gridAd0"
-                                 GridLinesVisibility="Horizontal"
-                                 ShowGroupPanel="False"
-                                 AutoGenerateColumns="False"
-                                 RowIndicatorVisibility="Collapsed"
-                                 IsFilteringAllowed="False"
+        <telerik:RadTabControl>
+            <telerik:RadTabItem Header="GridView">
+                <telerik:RadGridView ItemsSource="{Binding Persons }" 
+                             GroupRenderMode="Flat"
+                             CanUserFreezeColumns="False"
+                             ScrollMode="RealTime"
+                             CanUserInsertRows="true"
+                             CanUserDeleteRows="true"
+                             x:Name="gridAd0"
+                             GridLinesVisibility="Horizontal"
+                             ShowGroupPanel="False"
+                             AutoGenerateColumns="False"
+                             RowIndicatorVisibility="Collapsed"
+                             IsFilteringAllowed="False"
                              NewRowPosition="Bottom"
-                             >
-            <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn Header="材料名称"
+        >
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn Header="材料名称"
                                                 DataMemberBinding="{Binding Name}"
                                                 IsFilterable="False"                                                
                                                 Width="Auto" />
-                <telerik:GridViewDataColumn Header="日期"
+                        <telerik:GridViewDataColumn Header="日期"
                                                 DataMemberBinding="{Binding Age}"
                                                 IsFilterable="False"
                                                 Width="Auto" MinWidth="120"/>
-                <telerik:GridViewDataColumn Header="文件"
+                        <telerik:GridViewDataColumn Header="文件"
                                                 DataMemberBinding="{Binding IsAdmin}"
                                                 IsFilterable="False"
                                                 Width="Auto" MinWidth="80"/>
-                <telerik:GridViewDataColumn Header="备注"
+                        <telerik:GridViewDataColumn Header="备注"
                                                 DataMemberBinding="{Binding Birthdary}"
                                                 IsFilterable="False"
                                                 Width="Auto" MinWidth="200"/>
-                <models:AddFileButtonColumn Header="添加文件"/>
-                <models:ClearFileButtonColumn Header="删除文件"/>
+                        <models:AddFileButtonColumn Header="添加文件"/>
+                        <models:ClearFileButtonColumn Header="删除文件"/>
 
-            </telerik:RadGridView.Columns>
-            
-            <telerik:RadGridView.ChildTableDefinitions>
-                <telerik:GridViewTableDefinition />
-            </telerik:RadGridView.ChildTableDefinitions>
-            <telerik:RadGridView.HierarchyChildTemplate>
-                <DataTemplate>
-                    <telerik:RadGridView ItemsSource="{Binding FileNameDocs}" AutoGenerateColumns="False"
+                    </telerik:RadGridView.Columns>
+
+                    <telerik:RadGridView.ChildTableDefinitions>
+                        <telerik:GridViewTableDefinition />
+                    </telerik:RadGridView.ChildTableDefinitions>
+                    <telerik:RadGridView.HierarchyChildTemplate>
+                        <DataTemplate>
+                            <telerik:RadGridView ItemsSource="{Binding FileNameDocs}" AutoGenerateColumns="False"
                                          ShowGroupPanel="False" IsFilteringAllowed="False">
-                        <telerik:RadGridView.Columns>
-                            <telerik:GridViewDataColumn Header="文件名称" DataMemberBinding="{Binding Name}" IsReadOnly="True"/>
-                            <telerik:GridViewDataColumn Header="文件路径" DataMemberBinding="{Binding Path}" IsReadOnly="True"/>
-                        </telerik:RadGridView.Columns>
-                    </telerik:RadGridView>
-                </DataTemplate>
-            </telerik:RadGridView.HierarchyChildTemplate>
-        </telerik:RadGridView>
+                                <telerik:RadGridView.Columns>
+                                    <telerik:GridViewDataColumn Header="文件名称" DataMemberBinding="{Binding Name}" IsReadOnly="True"/>
+                                    <telerik:GridViewDataColumn Header="文件路径" DataMemberBinding="{Binding Path}" IsReadOnly="True"/>
+                                </telerik:RadGridView.Columns>
+                            </telerik:RadGridView>
+                        </DataTemplate>
+                    </telerik:RadGridView.HierarchyChildTemplate>
+                </telerik:RadGridView>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="AutoText">
+                <StackPanel Orientation="Vertical">
+                    <telerik:RadAutoCompleteBox  WatermarkContent="输入名称..."
+                                                 x:Name="songsAutoCompleteBox"
+                                                 TextSearchMode="Contains"
+                                                 AutoCompleteMode="Suggest"
+                                                 SelectionMode="Single"
+                                                 TextSearchPath="Title"
+                                                 ItemsSource="{Binding SongsList}"
+                                                 DropDownItemTemplate="{StaticResource SongsSearchAutoComplete}"
+                                                 Margin="0 20 0 0"
+                                                 SelectionChanged="SongsAutoCompleteBox_OnSelectionChanged"
+                                                 NoResultsContent="没找到"/>
+                    <Button x:Name="btAddSong" Content="添加" Click="BtAddSong_OnClick"></Button>
+</StackPanel>
+            </telerik:RadTabItem>
+        </telerik:RadTabControl>
     </Grid>
 </UserControl>

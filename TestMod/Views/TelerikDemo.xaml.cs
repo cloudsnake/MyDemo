@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
+using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.GridView;
 using TestMod.Models;
+using TestMod.ViewModels;
 
 namespace TestMod.Views
 {
@@ -10,9 +14,11 @@ namespace TestMod.Views
     /// </summary>
     public partial class TelerikDemo : UserControl
     {
+        private TelerikDemoViewModel model;
         public TelerikDemo()
         {
             InitializeComponent();
+            model = this.DataContext as TelerikDemoViewModel;
         }
 
         private void gridAd0_AddingNewDataItem(object sender, Telerik.Windows.Controls.GridView.GridViewAddingNewEventArgs e)
@@ -40,6 +46,35 @@ namespace TestMod.Views
         private void gridAd0_BeginningEdit(object sender, Telerik.Windows.Controls.GridViewBeginningEditRoutedEventArgs e)
         {
             e.Cancel = false;
+        }
+
+        #region AutoText
+        private void SongsAutoCompleteBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var autoCompleteBox = sender as RadAutoCompleteBox;
+            if (autoCompleteBox.SelectedItem != null)
+            {
+            }
+            else
+            {
+            }
+        }
+
+        #endregion
+
+        private void BtAddSong_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (songsAutoCompleteBox != null)
+            {
+                var text = songsAutoCompleteBox.SearchText;
+                if (model.SongsList.Where(t=>t.Title == text).Any())
+                {
+                }
+                else
+                {
+                    model.SongsList.Add(new Song(){Title = text});
+                }
+            }
         }
     }
 }
