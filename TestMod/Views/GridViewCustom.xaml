@@ -34,17 +34,17 @@
                 <telerik:GridViewColumnGroup Name="IWB"  Header="外拨" />
             </telerik:RadGridView.ColumnGroups>
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProjectInfo.Info}"  Header="项目信息" />
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding ContractInfos.Info}" Header="合同收款条目" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProjectInfo.Info}"  TextWrapping="Wrap"  Header="项目信息" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ContractInfos.Info}" TextWrapping="Wrap"  Header="合同收款条目" />
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime1}" IsCellMergingEnabled="False" ColumnGroupName="IOD" Header="时间"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount1}" IsCellMergingEnabled="False" ColumnGroupName="IOD"  Header="金额[元]"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" ColumnGroupName="IOD" IsCellMergingEnabled="False" Header="操作人"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime2}" ColumnGroupName="IKP"  IsCellMergingEnabled="False" Header="时间"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount2}" ColumnGroupName="IKP"  IsCellMergingEnabled="False" Header="金额[元]"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" ColumnGroupName="IKP" IsCellMergingEnabled="False" Header="操作人"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime3}" ColumnGroupName="IWB" IsCellMergingEnabled="False" Header="时间"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount3}" ColumnGroupName="IWB" IsCellMergingEnabled="False"  Header="金额[元]"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" ColumnGroupName="IWB" IsCellMergingEnabled="False" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" IsCellMergingEnabled="False" ColumnGroupName="IOD" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime2}" IsCellMergingEnabled="False" ColumnGroupName="IKP"  Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount2}" IsCellMergingEnabled="False" ColumnGroupName="IKP"  Header="金额[元]"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" IsCellMergingEnabled="False" ColumnGroupName="IKP" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime3}" IsCellMergingEnabled="False" ColumnGroupName="IWB" Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount3}" IsCellMergingEnabled="False" ColumnGroupName="IWB"  Header="金额[元]"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" IsCellMergingEnabled="False" ColumnGroupName="IWB" Header="操作人"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
     </Grid>
