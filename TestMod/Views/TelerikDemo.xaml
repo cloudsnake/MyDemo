@@ -4,6 +4,7 @@
              xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:prism="http://prismlibrary.com/" xmlns:models="clr-namespace:TestMod.Models"
+             xmlns:views="clr-namespace:TestMod.Views"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <UserControl.Resources>
         <Style x:Key="AutoCompleteStyle" TargetType="TextBlock">
@@ -87,6 +88,12 @@
                                                  NoResultsContent="没找到"/>
                     <Button x:Name="btAddSong" Content="添加" Click="BtAddSong_OnClick"></Button>
 </StackPanel>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="GridViewCRL">
+                <views:CustomRowLayout/>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem Header="复合表">
+                <views:GridViewCustom/>
             </telerik:RadTabItem>
         </telerik:RadTabControl>
     </Grid>

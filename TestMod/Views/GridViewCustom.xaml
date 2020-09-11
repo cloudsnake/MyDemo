@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="TestMod.Views.GridViewCustom"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="telerik:GridViewMergedCell" x:Key="GridViewMergedCellsStyle">
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Style>
+</Grid.Resources>
+        <telerik:RadGridView x:Name="InnerPressureView" 
+                             GroupRenderMode="Flat" 
+                             MergedCellsDirection="Vertical" 
+                             CanUserFreezeColumns="False" 
+                             IsFilteringAllowed="False" 
+                             ShowGroupPanel ="False"  
+                             CanUserInsertRows ="False"  
+                             AutoGenerateColumns="False" 
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
+                             ItemsSource="{Binding CustomDatas}"
+                             Margin="1,0,1,1" 
+                             MergedCellsStyle="{StaticResource GridViewMergedCellsStyle}"
+                             RowIndicatorVisibility="Collapsed"
+                             >
+            <telerik:RadGridView.ColumnGroups>
+                <telerik:GridViewColumnGroup Name="IBA"  Header="基本信息"/>
+                <telerik:GridViewColumnGroup Name="IOD"  Header="收款" />
+                <telerik:GridViewColumnGroup Name="IKP"  Header="开票" />
+                <telerik:GridViewColumnGroup Name="IWB"  Header="外拨" />
+            </telerik:RadGridView.ColumnGroups>
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ProjectInfo.Info}"  Header="项目信息" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ContractInfos.Info}" Header="合同收款条目" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime1}" IsCellMergingEnabled="False" ColumnGroupName="IOD" Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount1}" IsCellMergingEnabled="False" ColumnGroupName="IOD"  Header="金额[元]"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" ColumnGroupName="IOD" IsCellMergingEnabled="False" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime2}" ColumnGroupName="IKP"  IsCellMergingEnabled="False" Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount2}" ColumnGroupName="IKP"  IsCellMergingEnabled="False" Header="金额[元]"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" ColumnGroupName="IKP" IsCellMergingEnabled="False" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime3}" ColumnGroupName="IWB" IsCellMergingEnabled="False" Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount3}" ColumnGroupName="IWB" IsCellMergingEnabled="False"  Header="金额[元]"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" ColumnGroupName="IWB" IsCellMergingEnabled="False" Header="操作人"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>
