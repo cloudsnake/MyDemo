@@ -17,6 +17,7 @@ namespace AutoMapperMod.Models.Mapper
                 //cfg.CreateMap<User, UserDto>();
                 //cfg.CreateMap<UserDto, User>();
                 cfg.AddProfile<UserProfile>();
+                cfg.AddProfile<RoomProfile>();
                 #endregion
             });
             Mapper = MapperConfiguration.CreateMapper();

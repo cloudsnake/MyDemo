@@ -43,11 +43,18 @@ namespace AutoMapperMod.ViewModels
         {
             //Mapper.Initialize(x=>x.AddProfile<UserProfile>());
             var user = new User(){Id = 12,Age = 44,Name = "jifaf"};
+            var room = new Room() {Id = 101, RoomName = "roomName"};
+            user.Rooms = new List<Room>();
+            user.Rooms.Add(room);
             //var dto = MappingExtensions.ToUserDto(user);
 
             //var dtox = user.MapTo<User, UserDto>();
 
             var udto = AutoMapperConfiguration.Mapper.Map<UserDto>(user);
+
+            ICollection<RoomDto> icollectionDest = AutoMapperConfiguration.Mapper.Map<Room[], ICollection<RoomDto>>(user.Rooms.ToArray());
+
+            int a = 0;
             //var dto = mapper.Map<UserDto>(user);
             //MessageBox.Show(dto.Name);
         }
