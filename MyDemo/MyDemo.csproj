@@ -10,6 +10,7 @@
     <PackageReference Include="runtime.native.System.Security.Cryptography.OpenSsl" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AutoMapperMod\AutoMapperMod.csproj" />
     <ProjectReference Include="..\TestMod\TestMod.csproj" />
   </ItemGroup>
 </Project>

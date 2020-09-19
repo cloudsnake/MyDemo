@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:models="clr-namespace:TestMod.Models"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <Grid.Resources>
@@ -26,7 +27,9 @@
                              Margin="1,0,1,1" 
                              MergedCellsStyle="{StaticResource GridViewMergedCellsStyle}"
                              RowIndicatorVisibility="Collapsed"
-                             >
+                             CellEditEnded="InnerPressureView_OnCellEditEnded"
+                             models:MyGVCValidationBehavior.IsValidationEnabled="True"
+        >
             <telerik:RadGridView.ColumnGroups>
                 <telerik:GridViewColumnGroup Name="IBA"  Header="基本信息"/>
                 <telerik:GridViewColumnGroup Name="IOD"  Header="收款" />
@@ -35,16 +38,17 @@
             </telerik:RadGridView.ColumnGroups>
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding ProjectInfo.Info}"  TextWrapping="Wrap"  Header="项目信息" />
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding ContractInfos.Info}" TextWrapping="Wrap"  Header="合同收款条目" />
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime1}" IsCellMergingEnabled="False" ColumnGroupName="IOD" Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ContractInfos.Info}" TextWrapping="Wrap" Header="合同收款条目" >
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime1}" DataFormatString="{}{0:yyyy-MM-dd}" IsCellMergingEnabled="False" ColumnGroupName="IOD" Header="时间"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount1}" IsCellMergingEnabled="False" ColumnGroupName="IOD"  Header="金额[元]"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" IsCellMergingEnabled="False" ColumnGroupName="IOD" Header="操作人"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime2}" IsCellMergingEnabled="False" ColumnGroupName="IKP"  Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Info1}" IsCellMergingEnabled="False" ColumnGroupName="IOD" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime2}" DataFormatString="{}{0:yyyy年MM月dd日}" IsCellMergingEnabled="False" ColumnGroupName="IKP"  Header="时间"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount2}" IsCellMergingEnabled="False" ColumnGroupName="IKP"  Header="金额[元]"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" IsCellMergingEnabled="False" ColumnGroupName="IKP" Header="操作人"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime3}" IsCellMergingEnabled="False" ColumnGroupName="IWB" Header="时间"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Info2}" IsCellMergingEnabled="False" ColumnGroupName="IKP" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.DateTime3}" DataFormatString="{}{0:yyyy年MM月dd日}" IsCellMergingEnabled="False" ColumnGroupName="IWB" Header="时间"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Amount3}" IsCellMergingEnabled="False" ColumnGroupName="IWB"  Header="金额[元]"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding }" IsCellMergingEnabled="False" ColumnGroupName="IWB" Header="操作人"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding TbEntity6s.Info3}" IsCellMergingEnabled="False" ColumnGroupName="IWB" Header="操作人"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
     </Grid>

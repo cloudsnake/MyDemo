@@ -45,9 +45,9 @@ namespace TestMod.Models
 
         #region Amount1
 
-        private long amount1 = 0;
+        private double amount1 = 0;
 
-        public long Amount1
+        public double Amount1
         {
             get { return amount1; }
             set {
@@ -57,8 +57,8 @@ namespace TestMod.Models
                 }
             }
         }
-        private long amount2 = 0;
-        public long Amount2
+        private double amount2 = 0;
+        public double Amount2
         {
             get { return amount2; }
             set
@@ -69,9 +69,9 @@ namespace TestMod.Models
                 }
             }
         }
-        private long amount3 = 0;
+        private double amount3 = 0;
 
-        public long Amount3
+        public double Amount3
         {
             get { return amount3; }
             set
@@ -84,5 +84,44 @@ namespace TestMod.Models
         }
 
         #endregion
+
+        private string info1 = string.Empty;
+
+        public string Info1
+        {
+            get { return info1; }
+            set {
+                if (info1 != value)
+                {
+                    info1 = value;
+                }
+            }
+        }
+        private string info2 = string.Empty;
+        public string Info2
+        {
+            get { return info2; }
+            set
+            {
+                if (info2 != value)
+                {
+                    info2 = value;
+                }
+            }
+        }
+
+        private string info3 = string.Empty;
+        public string Info3
+        {
+            get { return info3; }
+            set
+            {
+                if (info3 != value)
+                {
+                    info3 = value;
+                }
+            }
+        }
+
     }
 }

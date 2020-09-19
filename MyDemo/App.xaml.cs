@@ -2,6 +2,7 @@
 using Prism.Modularity;
 using MyDemo.Views;
 using System.Windows;
+using AutoMapperMod;
 using TestMod;
 
 namespace MyDemo
@@ -23,6 +24,7 @@ namespace MyDemo
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<TestModModule>();
+            moduleCatalog.AddModule<AutoMapperModModule>();
 
             base.ConfigureModuleCatalog(moduleCatalog);
         }

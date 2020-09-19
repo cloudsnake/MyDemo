@@ -5,6 +5,14 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525" >
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
+            <Menu VerticalAlignment="Top" Height="26">
+                <MenuItem Header="模块">
+                    <MenuItem Header="TestMod" Command="{Binding ShowModCommand}" CommandParameter="TestMod.Views.Demo"></MenuItem>
+                    <MenuItem Header="AutoMapper" Command="{Binding ShowModCommand}" CommandParameter="AutoMapperMod.Views.ViewA"></MenuItem>
+                </MenuItem>
+            </Menu>
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        </WrapPanel>
     </Grid>
 </Window>

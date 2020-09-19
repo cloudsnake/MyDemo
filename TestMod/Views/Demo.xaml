@@ -35,7 +35,8 @@
             <TabItem Header="XceedDemo">
                 <views:XceedDemo/>
             </TabItem>
-            <TabItem Header="Test3">
+            <TabItem Header="Windows Control">
+                <views:WindowDemo></views:WindowDemo>
             </TabItem>
             <TabItem Header="Test4">
 
