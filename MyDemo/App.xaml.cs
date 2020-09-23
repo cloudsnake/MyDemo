@@ -3,6 +3,7 @@ using Prism.Modularity;
 using MyDemo.Views;
 using System.Windows;
 using AutoMapperMod;
+using GridLayout;
 using TestMod;
 
 namespace MyDemo
@@ -25,7 +26,7 @@ namespace MyDemo
         {
             moduleCatalog.AddModule<TestModModule>();
             moduleCatalog.AddModule<AutoMapperModModule>();
-
+            moduleCatalog.AddModule<GridLayoutModule>();
             base.ConfigureModuleCatalog(moduleCatalog);
         }
     }

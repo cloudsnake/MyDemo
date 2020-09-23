@@ -11,6 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoMapperMod\AutoMapperMod.csproj" />
+    <ProjectReference Include="..\GridLayout\GridLayout.csproj" />
     <ProjectReference Include="..\TestMod\TestMod.csproj" />
   </ItemGroup>
 </Project>
