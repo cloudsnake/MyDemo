@@ -1,13 +1,13 @@
 ﻿using System.Windows.Controls;
 
-namespace TestMod.Views
+namespace FtpClient.Views
 {
     /// <summary>
-    /// Interaction logic for WindowDemo
+    /// Interaction logic for ClientUi
     /// </summary>
-    public partial class WindowDemo : UserControl
+    public partial class ClientUi : UserControl
     {
-        public WindowDemo()
+        public ClientUi()
         {
             InitializeComponent();
         }

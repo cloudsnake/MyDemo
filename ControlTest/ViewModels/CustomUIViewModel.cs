@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TestMod.ViewModels
+namespace ControlTest.ViewModels
 {
-    public class XceedDemoViewModel : BindableBase
+    public class CustomUIViewModel : BindableBase
     {
-        public XceedDemoViewModel()
+        public CustomUIViewModel()
         {
 
         }

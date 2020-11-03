@@ -1,13 +1,13 @@
 ﻿using System.Windows.Controls;
 
-namespace TestMod.Views
+namespace ControlTest.Views
 {
     /// <summary>
-    /// Interaction logic for WindowCtr
+    /// Interaction logic for CustomUI
     /// </summary>
-    public partial class WindowCtr : UserControl
+    public partial class CustomUI : UserControl
     {
-        public WindowCtr()
+        public CustomUI()
         {
             InitializeComponent();
         }

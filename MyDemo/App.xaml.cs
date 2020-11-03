@@ -4,7 +4,8 @@ using MyDemo.Views;
 using System.Windows;
 using AutoMapperMod;
 using GridLayout;
-using TestMod;
+using ControlTest;
+using FtpClient;
 
 namespace MyDemo
 {
@@ -24,9 +25,10 @@ namespace MyDemo
         }
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
-            moduleCatalog.AddModule<TestModModule>();
             moduleCatalog.AddModule<AutoMapperModModule>();
             moduleCatalog.AddModule<GridLayoutModule>();
+            moduleCatalog.AddModule<ControlTestModule>();
+            moduleCatalog.AddModule<FtpClientModule>();
             base.ConfigureModuleCatalog(moduleCatalog);
         }
     }

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="FtpClient.Views.ClientUi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             FontSize="16">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="用户名：" Margin="4" Width="60"  VerticalAlignment="Center" />
+            <TextBox Text="{Binding FtpName,Mode=TwoWay}" Width="120" Margin=" 4"/>
+            <TextBlock Text="{Binding FtpStatus,Mode=TwoWay}" Margin="4" Width="80"/>
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="密码：" Margin="4" Width="60" VerticalAlignment="Center" />
+            <TextBox Text="{Binding FtpPassword,Mode=TwoWay}" Width="120" Margin=" 4"/>
+            <Button Content="登录" Command="{Binding LoginFtpServerCommand}" Width="60"   Margin="4" VerticalAlignment="Center" />
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Content="上传文件" Command="{Binding UploadFileCommand}" Width="80" Margin="4" VerticalAlignment="Center" />
+        </WrapPanel>
+
+    </Grid>
+</UserControl>

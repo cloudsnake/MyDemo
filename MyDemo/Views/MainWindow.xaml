@@ -11,7 +11,8 @@
                     <MenuItem Header="TestMod" Command="{Binding ShowModCommand}" CommandParameter="TestMod.Views.Demo"></MenuItem>
                     <MenuItem Header="AutoMapper" Command="{Binding ShowModCommand}" CommandParameter="AutoMapperMod.Views.ViewA"></MenuItem>
                     <MenuItem Header="GridLayout" Command="{Binding ShowModCommand}" CommandParameter="GridLayout.Views.GridLayoutMod"></MenuItem>
-
+                    <MenuItem Header="CustomUI" Command="{Binding ShowModCommand}" CommandParameter="ControlTest.Views.CustomUI"></MenuItem>
+                    <MenuItem Header="FtpClient" Command="{Binding ShowModCommand}" CommandParameter="FtpClient.Views.ClientUi"></MenuItem>
                 </MenuItem>
             </Menu>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" />

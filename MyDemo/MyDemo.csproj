@@ -7,11 +7,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc" Version="7.2.0.1422" />
-    <PackageReference Include="runtime.native.System.Security.Cryptography.OpenSsl" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoMapperMod\AutoMapperMod.csproj" />
+    <ProjectReference Include="..\ControlTest\ControlTest.csproj" />
+    <ProjectReference Include="..\FtpClient\FtpClient.csproj" />
     <ProjectReference Include="..\GridLayout\GridLayout.csproj" />
-    <ProjectReference Include="..\TestMod\TestMod.csproj" />
   </ItemGroup>
 </Project>

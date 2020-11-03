@@ -1,20 +1,20 @@
-﻿using TestMod.Views;
+﻿using FtpClient.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 
-namespace TestMod
+namespace FtpClient
 {
-    public class TestModModule : IModule
+    public class FtpClientModule : IModule
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
+
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<Demo>();
-            containerRegistry.RegisterForNavigation<TelerikDemo>();
+            containerRegistry.RegisterForNavigation<ClientUi>();
         }
     }
 }

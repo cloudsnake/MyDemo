@@ -2,7 +2,6 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
-using TestMod.Views;
 
 namespace MyDemo.ViewModels
 {
