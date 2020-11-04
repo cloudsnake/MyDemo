@@ -8,6 +8,11 @@
             <TabItem Header="A">
                 <TextBlock Text="0909090"/>
             </TabItem>
+            <TabItem Header="B">
+                <StackPanel Height="400">
+                    <Button Content="时间转换" Command="{Binding ConvertTimeCommand}" Height="30" Width="120" Margin="5"/>
+                </StackPanel>
+            </TabItem>
         </TabControl>
     </Grid>
 </UserControl>
